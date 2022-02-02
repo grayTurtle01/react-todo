@@ -3,6 +3,7 @@ import React from 'react'
 // Components
 import Form from './components/Form'
 import FilterButton from './components/FilterButton'
+import Task from './components/Task'
 
 function App(props) {
   
@@ -19,21 +20,8 @@ function App(props) {
     </div>
 
     <ul>
-      
-      <li>
-        <input type="checkbox" />
-        First Task
-        <button>Delete</button>
-        <button>Edit</button>
-      </li>
-
-      <li>
-        <input type="checkbox" />
-        Second Task
-        <button>Delete</button>
-        <button>Edit</button>
-      </li>
-
+      <Task text="first task" />
+      <Task text="second task" />
     </ul>
 
 
