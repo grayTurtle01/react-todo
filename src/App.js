@@ -1,6 +1,8 @@
 import React from 'react'
 
+// Components
 import Form from './components/Form'
+import FilterButton from './components/FilterButton'
 
 function App(props) {
   
@@ -11,9 +13,9 @@ function App(props) {
     <Form />  
 
     <div>
-      <button>All</button>
-      <button>Active</button>
-      <button>Completed</button>
+      <FilterButton name='All' />
+      <FilterButton name='Active' />
+      <FilterButton name='Completed' />
     </div>
 
     <ul>
