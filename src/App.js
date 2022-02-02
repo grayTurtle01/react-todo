@@ -1,4 +1,6 @@
 import React from 'react'
+import { nanoid } from 'nanoid'
+
 
 // Components
 import Form from './components/Form'
@@ -12,8 +14,10 @@ let tasks = [ {text:"First task", completed:false},
 
 
 function App(props) {
-  let taskList = tasks.map( task => (
-    <Task text={task.text}/>
+
+  // Default Data
+  let taskList = tasks.map( (task) => (
+    <Task text={task.text} key={nanoid()}/>
   ))
   
 
