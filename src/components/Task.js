@@ -7,8 +7,15 @@ function Task(props){
 
     return(
         <li>
-            <input type="checkbox"/>
-            {props.text}
+            <input type="checkbox" 
+                   defaultChecked={props.completed} 
+                   onClick={ ()=> props.toogleCompleted(props.id) }/>
+
+            <span style={  props.completed? {textDecoration:'line-through'} : 
+                                            {textDecoration:'none'} }>
+                {props.text}
+            </span>
+
             <button onClick={handleClick}
                     id={props.id}>
                 Delete

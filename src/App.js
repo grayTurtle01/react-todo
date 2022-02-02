@@ -23,8 +23,11 @@ function App(props) {
   let taskList = tasks.map( (task) => (
     <Task text={task.text} 
           key={nanoid()}
-          deleteTask={deleteTask}
           id={task.id}
+          completed={task.completed}
+
+          deleteTask={deleteTask}
+          toogleCompleted={toogleCompleted}
     />
 
   ))
@@ -46,6 +49,21 @@ function App(props) {
 
     setTasks(updatedTasks)
 
+  }
+
+  function toogleCompleted(id){
+
+    let updatedTasks = tasks.map( task => {
+      if( task.id === id ){
+        task.completed = !task.completed
+        return task
+      }
+      else{
+        return task
+      }
+    })
+
+    setTasks(updatedTasks)
   }
 
 
