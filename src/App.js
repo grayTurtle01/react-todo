@@ -5,8 +5,18 @@ import Form from './components/Form'
 import FilterButton from './components/FilterButton'
 import Task from './components/Task'
 
+let tasks = [ {text:"First task", completed:false},
+              {text:"Second task", completed:false} ]
+
+
+
+
 function App(props) {
+  let taskList = tasks.map( task => (
+    <Task text={task.text}/>
+  ))
   
+
   // return
   return (
    <div>
@@ -20,8 +30,7 @@ function App(props) {
     </div>
 
     <ul>
-      <Task text="first task" />
-      <Task text="second task" />
+      {taskList}
     </ul>
 
 
