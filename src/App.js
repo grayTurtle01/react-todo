@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { nanoid } from 'nanoid'
 
+import './App.css'
+
 
 // Components
 import Form from './components/Form'
@@ -41,11 +43,7 @@ function App(props) {
   }
 
   function deleteTask(id){
-    let updatedTasks = tasks.filter( task => {
-      if( task.id != id){
-        return task
-      }
-    })
+    let updatedTasks = tasks.filter( task => ( task.id !== id) )
 
     setTasks(updatedTasks)
 
@@ -69,7 +67,7 @@ function App(props) {
 
   // return
   return (
-   <div>
+   <div id="container">
 
     <Form addTask={addTask} />  
 
@@ -79,9 +77,13 @@ function App(props) {
       <FilterButton name='Completed' />
     </div>
 
-    <ul>
-      {taskList}
-    </ul>
+    <div id="tasks-container">
+
+      <ul className='miClase'>
+        {taskList}
+      </ul>
+      
+    </div>
 
 
    </div>
