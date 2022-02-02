@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Form from './components/Form'
 
 function App(props) {
   
@@ -7,10 +8,7 @@ function App(props) {
   return (
    <div>
 
-     <form>
-       <input placeholder="Add New Task"/>
-       <button>Add Task</button>
-     </form>
+    <Form />  
 
     <div>
       <button>All</button>
