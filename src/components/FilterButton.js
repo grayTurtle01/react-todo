@@ -1,7 +1,13 @@
-function FilterButton(props){
 
+
+function FilterButton(props){
   return(
-    <button>{props.name}</button>
+    <button onClick={ ()=> props.setFilter(props.name)}
+            style={ props.isPressed? { color: 'red' } : 
+                                     {color: 'black'} }
+     >
+      {props.name}
+    </button>
   )
 }
 

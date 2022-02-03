@@ -14,27 +14,44 @@ let data = [ {text:"First task", completed:false, id:nanoid()},
             ]
 
 
+let filters = ['All', 'Active', 'Completed']
 
+let FILTER_MAP = {
+  'All' : () => true,
+  'Active': task => task.completed === false,
+  'Completed': task => task.completed === true 
+  
+}
 
 function App(props) {
   // State
   const [tasks, setTasks] = useState(data)
+  const [filter, setFilter] = useState('All')
+  
 
 
   // TaskList for <ul>
-  let taskList = tasks.map( (task) => (
-    <Task text={task.text} 
-          key={nanoid()}
-          id={task.id}
-          completed={task.completed}
+  let taskList = tasks.filter( FILTER_MAP[filter] )
+    .map( (task) => (
+      <Task text={task.text} 
+            key={nanoid()}
+            id={task.id}
+            completed={task.completed}
 
-          deleteTask={deleteTask}
-          toogleCompleted={toogleCompleted}
-          updateTask={updateTask}
-    />
+            deleteTask={deleteTask}
+            toogleCompleted={toogleCompleted}
+            updateTask={updateTask}
+      />
 
-  ))
+    ))
   
+  let filterButtons = filters.map( filterName => (
+    <FilterButton name={filterName} 
+                  key={nanoid()}
+                  setFilter={setFilter}
+                  isPressed={filterName === filter} />
+  ))
+
   
   // Functions
   function addTask(text){
@@ -80,6 +97,7 @@ function App(props) {
 
   }
 
+
   // return
   return (
    <div id="container">
@@ -87,9 +105,7 @@ function App(props) {
     <Form addTask={addTask} />  
 
     <div>
-      <FilterButton name='All' />
-      <FilterButton name='Active' />
-      <FilterButton name='Completed' />
+      {filterButtons}
     </div>
 
     <div id="tasks-container">
