@@ -104,19 +104,21 @@ function App(props) {
   return (
    <div id="container">
 
-    <Form addTask={addTask} />  
+      <h2>Todo-List</h2>
 
-    <div>
-      {filterButtons}
-    </div>
+      <Form addTask={addTask} />  
 
-    <div id="tasks-container">
+      <div>
+        {filterButtons}
+      </div>
 
-      <ul className='miClase'>
-        {taskList}
-      </ul>
-      
-    </div>
+      <div id="tasks-container">
+
+        <ul className='miClase'>
+          {taskList}
+        </ul>
+        
+      </div>
 
 
    </div>
