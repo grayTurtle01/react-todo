@@ -17,10 +17,10 @@ function Task(props){
 
     function handleOnChange(e){
         setNewText(e.target.value)
-        console.log(newText)
     }
 
-    function handleUpdate(){
+    function handleUpdate(e){
+        e.preventDefault()
         props.updateTask(props.id, newText)
         toogleState()
 
@@ -58,20 +58,22 @@ function Task(props){
 
     const editingTask = (
         <li className="row">
-            <div>
+            <form onSubmit={ handleUpdate }>
 
                 <input type="text" 
                        value={newText}  
                        onChange={handleOnChange} 
                     />
 
-            </div>
-
-            <div>
-                <button onClick={ handleUpdate }
+                <button 
                         id={props.id}>
                     Update
                 </button>
+
+            </form>
+
+            <div>
+               
 
                 <button onClick={ toogleState }>
                     Cancel
