@@ -55,8 +55,10 @@ function App(props) {
   
   // Functions
   function addTask(text){
-    let newTask = {'text':text, completed:false, id:nanoid()}
-    setTasks( [...tasks, newTask] )
+    if( text.length > 0 ){
+      let newTask = {'text':text, completed:false, id:nanoid()}
+      setTasks( [...tasks, newTask] )
+    }
 
   }
 
