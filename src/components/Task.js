@@ -1,12 +1,34 @@
-function Task(props){
+import {useState} from 'react'
 
+function Task(props){
+    // state
+    const [isEditing, toogleIsEditring] = useState(false)
+    const [newText, setNewText] = useState(props.text)
+
+    // functions
     function handleClick(e){
         let id = e.target.id
         props.deleteTask(id)
     }
 
-    return(
-        <li class="row">
+    function toogleState(){
+        toogleIsEditring( !isEditing )
+    }
+
+    function handleOnChange(e){
+        setNewText(e.target.value)
+        console.log(newText)
+    }
+
+    function handleUpdate(){
+        props.updateTask(props.id, newText)
+        toogleState()
+
+    }
+
+    // templates
+    const task = (
+        <li className="row">
             <div>
 
                 <input type="checkbox" 
@@ -25,9 +47,45 @@ function Task(props){
                     Delete
                 </button>
 
-                <button>Edit</button>
+                <button onClick={ toogleState }>
+                    Edit
+                </button>
+
             </div>    
         </li>
+        
+    )
+
+    const editingTask = (
+        <li className="row">
+            <div>
+
+                <input type="text" 
+                       value={newText}  
+                       onChange={handleOnChange} 
+                    />
+
+            </div>
+
+            <div>
+                <button onClick={ handleUpdate }
+                        id={props.id}>
+                    Update
+                </button>
+
+                <button onClick={ toogleState }>
+                    Cancel
+                </button>
+
+            </div>    
+        </li>
+        
+    )
+
+    return(
+        <>
+            { isEditing? editingTask : task  }
+        </>
     )
 }
 

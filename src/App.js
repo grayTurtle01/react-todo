@@ -30,6 +30,7 @@ function App(props) {
 
           deleteTask={deleteTask}
           toogleCompleted={toogleCompleted}
+          updateTask={updateTask}
     />
 
   ))
@@ -64,6 +65,20 @@ function App(props) {
     setTasks(updatedTasks)
   }
 
+  function updateTask(id, newText){
+    let updatedTasks = tasks.map( task => {
+      if( task.id === id){
+        task.text = newText
+        return task
+      }
+      else{
+        return task
+      }
+    })
+
+    setTasks(updatedTasks)
+
+  }
 
   // return
   return (
