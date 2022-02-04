@@ -9,3 +9,6 @@ A Front-End Todo List App created with Create-React-App
 - Delete Task
 - Check/Uncheck Task
 - Filter Tasks : ['All', 'Completed', 'Active']
+
+## SnapShoot
+![Todo-Snap](snapshoot/todo-snap.png)
