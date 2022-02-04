@@ -1,5 +1,5 @@
 # react-todo
-A Todo List with React created with Create-React-App
+A Front-End Todo List App created with Create-React-App
 
 
 ## Features
