@@ -1,8 +1,8 @@
-# react-todo
+# react-todo 
 A Front-End Todo List App created with Create-React-App
 
 
-## Features
+## Features 🧰
 - Read All Task
 - Add New Task
 - Edit Task
@@ -10,7 +10,7 @@ A Front-End Todo List App created with Create-React-App
 - Check/Uncheck Task
 - Filter Tasks : ['All', 'Completed', 'Active']
 
-## SnapShoot
+## SnapShoot 📸
 <!-- ![Todo-Snap](snapshoot/todo-snap.png) -->
 ![Todo-Snap](snapshoot/screenshot-2.png)
 
