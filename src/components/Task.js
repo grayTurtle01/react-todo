@@ -1,9 +1,24 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Task(props){
     // state
     const [isEditing, toogleIsEditring] = useState(false)
     const [newText, setNewText] = useState(props.text)
+
+
+    // effects
+    useEffect( ()=> {
+        try{
+            let inputs = document.querySelectorAll('.editing-input')
+            let input = inputs[ inputs.length - 1]
+            input.focus()
+
+        }catch(e){
+
+        }
+
+    },[isEditing])
+
 
     // functions
     function handleClick(e){
@@ -62,7 +77,8 @@ function Task(props){
 
                 <input type="text" 
                        value={newText}  
-                       onChange={handleOnChange} 
+                       onChange={handleOnChange}
+                       className="editing-input" 
                     />
 
                 <button 
