@@ -9,8 +9,10 @@ import Form from './components/Form'
 import FilterButton from './components/FilterButton'
 import Task from './components/Task'
 
-let data = [ {text:"First task",  completed:false, id:nanoid() },
-             {text:"Second task", completed:false, id:nanoid() } 
+let data = [ {text:"Learn React",  completed:true, id:nanoid() },
+             {text:"Learn Hooks", completed:true, id:nanoid() },
+             {text:"Learn useState", completed:true, id:nanoid() },
+             {text:"Learn useEffect", completed:false, id:nanoid() } 
            ]
 
 
