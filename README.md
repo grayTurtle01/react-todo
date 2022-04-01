@@ -11,6 +11,6 @@ A Front-End Todo List App created with Create-React-App
 - Filter Tasks : ['All', 'Completed', 'Active']
 
 ## SnapShoot
-![Todo-Snap](snapshoot/todo-snap.png)
+<!-- ![Todo-Snap](snapshoot/todo-snap.png) -->
 ![Todo-Snap](snapshoot/screenshot-2.png)
 
